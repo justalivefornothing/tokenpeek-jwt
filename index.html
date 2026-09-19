@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TokenPeek — JWT Inspector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>TokenPeek</h1>
+    <p>Decode JWTs, inspect claims, verify HMAC signatures — all in the browser.</p>
+  </header>
+  <main>
+    <section class="input-panel">
+      <label for="token">JWT</label>
+      <textarea id="token" rows="5" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."></textarea>
+      <label for="secret">HMAC secret (optional)</label>
+      <input id="secret" type="password" placeholder="your-secret" autocomplete="off" />
+      <button id="decode">Decode &amp; Verify</button>
+    </section>
+    <section class="output-panel">
+      <div class="card">
+        <h2>Header</h2>
+        <pre id="header">—</pre>
+      </div>
+      <div class="card">
+        <h2>Payload</h2>
+        <pre id="payload">—</pre>
+      </div>
+      <div class="card">
+        <h2>Signature</h2>
+        <p id="sig-status" class="muted">Paste a token to inspect</p>
+        <pre id="signature">—</pre>
+      </div>
+      <div class="card timeline">
+        <h2>Time claims</h2>
+        <ul id="timeline"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

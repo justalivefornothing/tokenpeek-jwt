@@ -1,13 +1,17 @@
-# Tokenpeek
+# TokenPeek
 
-Paste a JWT. The three segments light up, claims land on a timeline with a live “now” marker, and pasting the right secret flips the signature badge green — all in the browser via WebCrypto. Nothing leaves the tab.
+Browser-only JWT inspector.
 
-Base64url decode is hand-written. HMAC verify covers HS256 / HS384 / HS512. Registered claims get annotations. You can edit the payload and re-sign to mint a new token. Sample tokens included.
+- Decode header & payload (Base64URL)
+- Timeline for `iat` / `nbf` / `exp`
+- Optional HMAC verification (HS256 / HS384 / HS512) via Web Crypto
 
-Core (`src/lib`) is pure TypeScript with no React imports so it tests under Node. UI is React + Vite + Tailwind.
+## Run
 
-Architecture and remaining milestones live in `PLAN.md`.
+Open `index.html` in a browser, or serve the folder statically:
 
-## License
+```bash
+npx serve .
+```
 
-MIT
+No build step. No server-side secrets leave the page.
