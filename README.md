@@ -1,17 +1,29 @@
 # TokenPeek
 
-Browser-only JWT inspector.
+Browser-only JWT inspector. Tokens never leave the page.
+
+## Features
 
 - Decode header & payload (Base64URL)
-- Timeline for `iat` / `nbf` / `exp`
+- Timeline for `iat` / `nbf` / `exp` with relative times
 - Optional HMAC verification (HS256 / HS384 / HS512) via Web Crypto
 
 ## Run
-
-Open `index.html` in a browser, or serve the folder statically:
 
 ```bash
 npx serve .
 ```
 
-No build step. No server-side secrets leave the page.
+Or open `index.html` directly.
+
+## Files
+
+| File | Role |
+|------|------|
+| `index.html` | Layout |
+| `app.js` | Decode + verify |
+| `styles.css` | Dark inspector UI |
+
+## License
+
+MIT
